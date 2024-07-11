@@ -42,6 +42,5 @@ const styles = {
     fontWeight: 400,
     fontSize: 18,
     textAlign: "center",
-    fontWeight: 700,
   },
 };
