@@ -1,0 +1,62 @@
+:root {
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  color: #4D4D4D;
+  background-color: #FFFFFF;
+  min-height: 100vh;
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.site-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 400px;
+  margin: auto;
+}
+
+.signIn {
+  background: #03D69D;
+  width: 100%;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+  font-family: Nunito;
+}
+
+.signIn:hover {
+  background-color: #10b78a;
+  transform: scale(1.01);
+  box-shadow: 1px 1px 6px #777777;
+  transition: all 0.2s ease-in-out;
+}
+
