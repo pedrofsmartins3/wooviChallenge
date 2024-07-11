@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Box, Button, Container, Typography } from "@mui/material";
 import ButtonCommon from "../components/Button";
 import { useNavigate } from "react-router-dom";
@@ -14,6 +14,10 @@ function Home() {
   const navigate = useNavigate();
   const { user, isSignedIn } = useUser();
   const name = user?.firstName + " " + user?.lastName;
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <Container
@@ -58,10 +62,12 @@ function Home() {
               </Box>
             </SignedIn>
           </Box>
-          <Typography sx={{ ...styles.text, letterSpacing: 2, fontSize: 18 }}>
+          <Typography
+            sx={{ ...styles.text, letterSpacing: 2, fontSize: "1.4rem" }}
+          >
             MacBook Pro
           </Typography>
-          <Typography sx={{ ...styles.text, fontSize: 14 }}>
+          <Typography sx={{ ...styles.text, fontSize: "1rem" }}>
             R$ 35.500,00
           </Typography>
 
@@ -98,8 +104,8 @@ const styles = {
   text: {
     fontFamily: "Nunito",
     fontWeight: 700,
-    fontSize: 16,
     marginBottom: 1,
+    fontSize: "1rem",
   },
   img: {
     width: "100%",

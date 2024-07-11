@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { mackBookPrices } from "../data/data";
 import { Alert, Box, Container, Snackbar, Typography } from "@mui/material";
@@ -17,6 +17,10 @@ function PaymentId() {
   const filledArray = timesArray.fill().map((_, index) => {
     return { number: index };
   });
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const [open, setOpen] = useState(false);
   const handleClick = () => {
@@ -37,7 +41,7 @@ function PaymentId() {
       <Typography
         sx={{
           ...styles.text,
-          fontSize: 18,
+          fontSize: "1.4rem",
           fontWeight: 900,
           maxWidth: "22ch",
           textAlign: "center",
@@ -71,7 +75,7 @@ function PaymentId() {
         <Typography
           sx={{
             ...styles.text,
-            fontSize: 14,
+
             color: "#B2B2B2",
           }}
         >
@@ -80,7 +84,7 @@ function PaymentId() {
         <Typography
           sx={{
             ...styles.text,
-            fontSize: 14,
+
             fontWeight: 700,
           }}
         >
@@ -100,7 +104,6 @@ function PaymentId() {
             <Typography
               sx={{
                 ...styles.text,
-                fontSize: 14,
               }}
             >
               1º Entrada no PIX
@@ -109,7 +112,7 @@ function PaymentId() {
           <Typography
             sx={{
               ...styles.text,
-              fontSize: 14,
+
               fontWeight: 700,
             }}
           >
@@ -131,7 +134,6 @@ function PaymentId() {
                 <Typography
                   sx={{
                     ...styles.text,
-                    fontSize: 14,
                   }}
                 >
                   {index + 2}º no cartão
@@ -140,7 +142,7 @@ function PaymentId() {
               <Typography
                 sx={{
                   ...styles.text,
-                  fontSize: 14,
+
                   fontWeight: 700,
                 }}
               >
@@ -161,7 +163,6 @@ function PaymentId() {
         <Typography
           sx={{
             ...styles.text,
-            fontSize: 14,
           }}
         >
           CET: 0,5%
@@ -169,7 +170,6 @@ function PaymentId() {
         <Typography
           sx={{
             ...styles.text,
-            fontSize: 14,
           }}
         >
           Total: R$ {data.totalPrice ? data.totalPrice : data.value}
@@ -187,7 +187,7 @@ function PaymentId() {
         <Typography
           sx={{
             ...styles.text,
-            fontSize: 14,
+
             fontWeight: 700,
           }}
         >
@@ -269,7 +269,7 @@ const styles = {
   text: {
     fontFamily: "Nunito",
     fontWeight: 400,
-    fontSize: 18,
+    fontSize: "1rem",
   },
   priceText: {
     fontWeight: 900,

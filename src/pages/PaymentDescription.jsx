@@ -16,7 +16,7 @@ import {
   MenuItem,
   Modal,
 } from "@mui/material";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { mackBookPrices } from "../data/data";
 import ButtonCommon from "../components/Button";
@@ -43,15 +43,16 @@ function PaymentDescription() {
     times: 1,
   });
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const handleSubtraction = (value1, value2) => {
-    // Passo 1: Converter strings para números
     const number1 = parseFloat(value1.replace(/\./g, "").replace(",", "."));
     const number2 = parseFloat(value2.replace(/\./g, "").replace(",", "."));
 
-    // Passo 2: Realizar a subtração
     const subtractionResult = number1 - number2;
 
-    // Passo 3: Formatar o resultado de volta para uma string
     const formattedResult = subtractionResult.toLocaleString("pt-BR", {
       minimumFractionDigits: 2,
       maximumFractionDigits: 2,
@@ -84,7 +85,7 @@ function PaymentDescription() {
       <Typography
         sx={{
           ...styles.text,
-          fontSize: 18,
+          fontSize: "1.4rem",
           fontWeight: 900,
           maxWidth: "30ch",
           textAlign: "center",
@@ -190,7 +191,7 @@ function PaymentDescription() {
         <Typography
           sx={{
             ...styles.text,
-            fontSize: 14,
+
             color: "#B2B2B2",
           }}
         >
@@ -199,7 +200,7 @@ function PaymentDescription() {
         <Typography
           sx={{
             ...styles.text,
-            fontSize: 14,
+
             fontWeight: 700,
           }}
         >
@@ -219,7 +220,6 @@ function PaymentDescription() {
             <Typography
               sx={{
                 ...styles.text,
-                fontSize: 14,
               }}
             >
               1º Entrada no PIX
@@ -228,7 +228,7 @@ function PaymentDescription() {
           <Typography
             sx={{
               ...styles.text,
-              fontSize: 14,
+
               fontWeight: 700,
             }}
           >
@@ -250,7 +250,6 @@ function PaymentDescription() {
                 <Typography
                   sx={{
                     ...styles.text,
-                    fontSize: 14,
                   }}
                 >
                   {index + 2}º no cartão
@@ -259,7 +258,7 @@ function PaymentDescription() {
               <Typography
                 sx={{
                   ...styles.text,
-                  fontSize: 14,
+
                   fontWeight: 700,
                 }}
               >
@@ -280,7 +279,6 @@ function PaymentDescription() {
         <Typography
           sx={{
             ...styles.text,
-            fontSize: 14,
           }}
         >
           CET: 0,5%
@@ -288,7 +286,6 @@ function PaymentDescription() {
         <Typography
           sx={{
             ...styles.text,
-            fontSize: 14,
           }}
         >
           Total: R$ {leftValue}
@@ -306,7 +303,7 @@ function PaymentDescription() {
         <Typography
           sx={{
             ...styles.text,
-            fontSize: 14,
+
             fontWeight: 700,
           }}
         >
@@ -319,7 +316,7 @@ function PaymentDescription() {
         <Typography
           sx={{
             ...styles.text,
-            fontSize: 12,
+            fontSize: "0.8rem",
             color: "#B2B2B2",
           }}
         >
@@ -328,7 +325,7 @@ function PaymentDescription() {
         <Typography
           sx={{
             ...styles.text,
-            fontSize: 12,
+            fontSize: "0.8rem",
             fontWeight: 700,
           }}
         >
@@ -381,7 +378,7 @@ const styles = {
   text: {
     fontFamily: "Nunito",
     fontWeight: 400,
-    fontSize: 18,
+    fontSize: "1rem",
   },
   priceText: {
     fontWeight: 900,

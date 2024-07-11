@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Box, Container, IconButton, Typography } from "@mui/material";
 import { useUser } from "@clerk/clerk-react";
 import { mackBookPrices } from "../data/data";
@@ -23,9 +23,13 @@ function Payment() {
     }
   };
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <Container maxWidth="lg" sx={styles.container}>
-      <Typography sx={{ ...styles.text, fontSize: 18, fontWeight: 900 }}>
+      <Typography sx={{ ...styles.text, fontSize: "1.4rem", fontWeight: 900 }}>
         {firstName}, como você quer pagar?
       </Typography>
       <Box
@@ -73,7 +77,8 @@ function Payment() {
         <Typography
           sx={{
             ...styles.text,
-            fontSize: 14,
+            fontSize: "1rem",
+
             color: "#03D69D",
             fontWeight: 700,
           }}
@@ -165,8 +170,9 @@ function Payment() {
               <Typography
                 sx={{
                   ...styles.text,
-                  fontSize: 12,
+                  fontSize: "0.9rem",
                   color: "#AFAFAF",
+                  marginBottom: "6px",
                 }}
               >
                 Total: {item.totalPrice}
@@ -237,14 +243,15 @@ const styles = {
     width: "fit-content",
     padding: "0 16px",
     fontWeight: 700,
-    fontSize: 14,
+    fontSize: "1rem",
+
     position: "absolute",
     top: -10,
   },
   text: {
     fontFamily: "Nunito",
     fontWeight: 400,
-    fontSize: 18,
+    fontSize: "1.1rem",
   },
   priceText: {
     fontWeight: 900,
